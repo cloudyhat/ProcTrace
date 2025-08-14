@@ -54,7 +54,7 @@ DmlLines AS (
         rc.CalledProc,
         LTRIM(RTRIM(Line.value)) AS DML_Line,
         CASE 
-            WHEN Line.value LIKE '%INSERT INTO%' THEN 1
+            WHEN Line.value LIKE '%INSERT INTO%' THEN 1  --You can change INSERT and UPDATE with other commands as per your needs
             WHEN Line.value LIKE '%UPDATE%' THEN 2
             ELSE 0
         END AS DmlType
